@@ -1,0 +1,10 @@
+設計模式相關:
+
+https://github.com/quanke/design-pattern-java-source-code
+https://github.com/shixinzhang/ShixinDesignPattern
+https://github.com/shihyu/DesignPatternExample/tree/master/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%AA/DPModel
+https://github.com/shihyu/DesignPatternExample
+https://github.com/mingjunli/JavaDesignPatterns
+https://github.com/mirsfang/ExamplesOfDesignPatterns/tree/master/src/action
+https://github.com/youlookwhat/DesignPattern
+http://design-patterns.readthedocs.io/zh_CN/latest/behavioral_patterns/behavioral.html

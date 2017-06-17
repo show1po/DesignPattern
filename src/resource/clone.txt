@@ -1,0 +1,21 @@
+java語言中提供兩種方式創造物件
+1.使用new操作符建立一個物件。
+2.使用clone方法複製一個物件。
+new:物件類型>分配內存空間>呼叫建構子>填充物件區域值>構造方法返回>物件建立完畢。
+clone:將物件類別implements Cloneable後，再透過覆寫java.lang.Object#clone()，因為物件類別均繼承Object，故Cloneable本身並無方法僅標示功能。
+附帶一提，此處clone為淺層複製。
+
+@Override
+protected Object clone() throws CloneNotSupportedException {
+	return super.clone();
+}
+
+淺層複製(shallow clone):
+若複製類別物件的屬性值是類別型態，則此類別會直接參照複製來源位址，而不會再呼叫clone()建立新物件。
+深層複製(deep clone):
+又名N層複製，將類別型態Field值均進行clone()，可透過序列化java.lang.Serializable來完成。
+
+參考:
+http://blog.csdn.net/zhangjg_blog/article/details/18369201
+http://blog.csdn.net/kenthong/article/details/5758884
+

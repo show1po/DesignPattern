@@ -1,0 +1,6 @@
+IDEA Plugin:
+1.EmmetEverywhere
+2.GsonFormat:quickly to convert a JSON string to an InnerClassEntity class.
+3.IntelliJ Lombok plugin
+4.Markdown Navigator 
+5.FindBugs

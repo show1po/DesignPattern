@@ -1,0 +1,22 @@
+一、生成模式 Creational Patterns(5)
+Abstract Factory	Builder	Factory Method	Prototype	Singleton
+二、結構模式 Structural Patterns(7)
+Adapter	Bridge	Composite	Decorator	Facade	Flyweight	Proxy
+三、行為模式 Behavioral Patterns(11)
+Chain of Responsibility	Command	Interpreter	Iterator
+Mediator	Memento	Observer	State
+Strategy	Template Method	Visitor	 
+
+Name:樣式名稱
+Context:發生情境
+Problem:問題本身
+Froeces:問題限制或特性
+Solution:解決問題方法
+Consequence:使用解決方案的結果
+
+設計守則
+1.將變化物取出並封裝。
+2.針對介面設計，而非針對實作。
+*Java:此處介面是Supertype(介面/抽象類別)。
+3.多用組合少用繼承。
+https://www.slideshare.net/shiningjason/design-patterns-in-luster?qid=17cc2834-2724-4391-b119-61576d86fae2&v=&b=&from_search=24
