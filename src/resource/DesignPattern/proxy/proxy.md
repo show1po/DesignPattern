@@ -120,6 +120,7 @@ public static Object newProxyInstance(
 ###範例
 
 ![MacDown logo](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/proxy/Dynamic.png)
+
 在此自定義一個Handler，來實現上述靜態代理範例，經紀人對於通告費的接洽控制。
 
 ~~~java
@@ -197,6 +198,7 @@ public class ProxyHandler implements InvocationHandler {
         agent.talkShow(36000,"康納秀");
     }
 ~~~
+
 - 若被代理類別兼具多重實作，agent可透過強制轉型，實現不同介面。
 如：沈玉琳是偶像藝人，也是知名製作人。
 
@@ -208,6 +210,8 @@ public class ProxyHandler implements InvocationHandler {
 ###執行
 
 ![MacDown logo](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/proxy/dynamic%20console.png)
+
+
 使用時只需要傳入藝人，就會動態產生經紀人。
 而經紀人不需要去實作欲代理的操作，也不遭IArtist介面修改影響。
 ##結論
