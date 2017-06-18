@@ -228,3 +228,6 @@ public class ProxyHandler implements InvocationHandler {
 ##感謝：
 * [动态代理：1 个经纪人如何代理 N 个明星][proxy]
 [proxy]:http://blog.csdn.net/u011240877/article/details/52334547
+
+* [retrofit 將 RESTful API 寫法規範和模組化的函式庫][retrofit]
+[retrofit]:https://bng86.gitbooks.io/android-third-party-/content/retrofit.html
