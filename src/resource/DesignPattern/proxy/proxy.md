@@ -214,6 +214,7 @@ public class ProxyHandler implements InvocationHandler {
 
 使用時只需要傳入藝人，就會動態產生經紀人。
 而經紀人不需要去實作欲代理的操作，也不遭IArtist介面修改影響。
+
 ##結論
 - 動態代理實現Aop思想。
 - JDK僅實現對介面實現類別代理， CGLIB (Code Generation Library) 開源項目則彌補了JDK不足。
