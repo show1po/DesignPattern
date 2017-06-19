@@ -6,6 +6,6 @@ package com.pawn.patterns.adapter;
 public class LightningPlug implements Lightning{
 
     public String insert() {
-        return "Lightning。";
+        return "Lightning插頭";
     }
 }

@@ -11,6 +11,6 @@ public class LightningAdapter implements Lightning {
     }
 
     public String insert() {
-        return TRSPlug.insert()+" convert to  Lightning.";
+        return TRSPlug.insert()+" convert to  Lightning插頭.";
     }
 }

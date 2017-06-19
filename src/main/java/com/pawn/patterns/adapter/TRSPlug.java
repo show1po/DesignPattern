@@ -5,6 +5,6 @@ package com.pawn.patterns.adapter;
  */
 public class TRSPlug {
     public String insert() {
-        return "TRSPlug:3.5mm.";
+        return "TRS 3.5mm 插頭";
     }
 }
