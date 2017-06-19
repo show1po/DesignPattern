@@ -1,7 +1,7 @@
 
-#proxy
+# proxy
 
-##靜態代理:
+## 靜態代理:
 
 ![MacDown logo](https://gitcdn.link/repo/show1po/DesignPattern/master/src/resource/DesignPattern/proxy/proxy_agent.png)
 
@@ -83,7 +83,7 @@ public class Agent implements IArtist {
     }
 }
 ~~~
-###進行單元測試：
+### 進行單元測試：
 
 ~~~java
 //聯繫經紀人，敲通告找藝人來上節目。
@@ -95,17 +95,17 @@ public void callArtist() {
     agent.liveShow(20000,"飢餓遊戲");
 }
 ~~~
-###執行結果
+### 執行結果
 
 ![MacDown logo](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/proxy/Artist%20console.png)
 
-###缺點
+### 缺點
 * 代理類別 Agent 和被代理類別 Star 需實作相同介面。若介面有變動，則代理類別與被代理類別均須調整。
 * 執行前須先呼叫代理類別，若有多項代理則須一一調用。
 
 
-##動態代理：
-***動態代理*** 運用反射機制，攔截欲代理的操作，並且動態建立***代理類別*** Agent，省去編程代理類別。
+## 動態代理：
+***動態代理*** 運用反射機制，攔截欲代理的操作，並且動態建立 ***代理類別*** Agent，省去編程代理類別。
 JDK中提供Proxy類別來實現動態代理，主要方法：Proxy.newProxyInstance()。
 
 ~~~java
@@ -117,7 +117,7 @@ public static Object newProxyInstance(
             //...方法内容省略
             }
 ~~~
-###範例
+### 範例
 
 ![MacDown logo](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/proxy/Dynamic.png)
 
@@ -186,7 +186,7 @@ public class ProxyHandler implements InvocationHandler {
 * 利用getProxy()的呼叫Proxy.newProxyInstance()生成代理類別 Agent。
 * 在invoke()，依據方法名稱，創建類別等資訊進行對應攔截處理。
 
-###單元測試
+### 單元測試
 
 ~~~java
     @Test
@@ -207,7 +207,7 @@ public class ProxyHandler implements InvocationHandler {
     agent.createShow(100000,"台灣紅不讓");
 ~~~
 
-###執行
+### 執行
 
 ![MacDown logo](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/proxy/dynamic%20console.png)
 
@@ -215,7 +215,7 @@ public class ProxyHandler implements InvocationHandler {
 使用時只需要傳入藝人，就會動態產生經紀人。
 而經紀人不需要去實作欲代理的操作，也不遭IArtist介面修改影響。
 
-##結論
+## 結論
 - 動態代理實現Aop思想。
 - JDK僅實現對介面實現類別代理， CGLIB (Code Generation Library) 開源項目則彌補了JDK不足。
 - 動態代理實作方式：
@@ -225,7 +225,7 @@ public class ProxyHandler implements InvocationHandler {
 	4. 根據要使用方法決定返回代理類別的類型
 
 
-##感謝：
+## 感謝：
 * [动态代理：1 个经纪人如何代理 N 个明星][proxy]
 [proxy]:http://blog.csdn.net/u011240877/article/details/52334547
 
