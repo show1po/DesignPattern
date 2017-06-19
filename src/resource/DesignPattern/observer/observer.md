@@ -1,6 +1,6 @@
-#觀察者模式：Youtube訂閱，擅長二次創作的谷阿莫
+# 觀察者模式：Youtube訂閱，擅長二次創作的谷阿莫
 
-##前言
+## 前言
 
 ![MacDown logo](https://yt3.ggpht.com/T5OsnSLil-kvVsFELs2y1sYsMY19eJfrsHlJr9oXP_hm2wPjK2W_hgpnYtTtM9rjPoeBOzpF=w2120-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no)
 
@@ -28,7 +28,7 @@
 	3. 訂閱觀眾馬上上線看片。
 
 
-##進入代碼環節：
+## 進入代碼環節：
 
 ![MacDown logo](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/observer/observer_diagram.png)
 
@@ -158,7 +158,7 @@ public class Film{
 }
 ~~~
 
-###單元測試：
+### 單元測試：
 
 ~~~java
     @Test

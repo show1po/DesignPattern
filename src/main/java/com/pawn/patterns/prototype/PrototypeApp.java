@@ -5,10 +5,10 @@ package com.pawn.patterns.prototype;
  */
 public class PrototypeApp {
     public static void main(String[] args) {
-
         Class major= new Class("資訊管理系一年級",1,"資訊管理系");
         Student prototypeA=new Student("mary",22,"female",major,"野雞科技大學");
         Student cloneA = prototypeA.clone();
+
         System.out.println("原型:"+prototypeA);
         System.out.println("複製:"+cloneA);
         System.out.println("原型/複製 是否相同物件:"+(prototypeA==cloneA));
@@ -17,6 +17,5 @@ public class PrototypeApp {
         major.setGrade(2);
         System.out.println("原型:"+prototypeA);
         System.out.println("複製:"+cloneA);
-
     }
 }
