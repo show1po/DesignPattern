@@ -32,7 +32,7 @@ PS.開放封閉原則
 單一職責原則(Single Responsibility Principle):只有一個原因引起類的變更。
 李氏替換原則(Liskov Substitution Principle):父類使用的地方，則子類一定可以替換。
 依賴倒轉(Dependence Inversion Principle):針對介面編程，依賴抽象而非具體。
-介面隔離原則(Interface Segregation Principle):細分介面，將低耦合。
+介面隔離原則(Interface Segregation Principle):細分介面，降低耦合。
 迪米特法則(Demeter Principle):實體應當減少與其他類發生相互作用
 開閉原則(Open Close Principle):對擴展開放，對修改關閉。
 合成復用原則(Composite Reuse Principle):多用合成/聚合取代繼承。
