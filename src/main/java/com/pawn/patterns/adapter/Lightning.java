@@ -1,7 +1,7 @@
 package com.pawn.patterns.adapter;
 
 /**
- * Created by Show on 2017/6/19.
+ * Target 目標介面，可以是具體或抽象類別。
  */
 public interface Lightning {
     String insert();
