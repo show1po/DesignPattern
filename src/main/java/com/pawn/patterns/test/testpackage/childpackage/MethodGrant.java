@@ -7,7 +7,6 @@ import java.util.Queue;
  */
 public class MethodGrant {
     protected void protect() {
-        Queue
         System.out.println("protected");
     }
 

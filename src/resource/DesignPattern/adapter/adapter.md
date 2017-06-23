@@ -14,6 +14,8 @@
 ### 不! ###
 你的心聲，還沒說出口，蘋果就都聽到了~
 
+![mind](http://123)
+
 你可以花NT$350到蘋果商店，購買
 [Lightning 對 3.5 公釐耳機插孔轉接器
 ](https://www.apple.com/tw/shop/product/MMX62FE/A/lightning-%E5%B0%8D-35-%E5%85%AC%E9%87%90%E8%80%B3%E6%A9%9F%E6%8F%92%E5%AD%94%E8%BD%89%E6%8E%A5%E5%99%A8)
@@ -51,3 +53,71 @@ PS.至於無線耳機呢？
 3. 客戶接受到呼叫結果，但並未察覺這一切是透過轉接器居中聯繫。
 
 
+#### 釐清角色： ####
+
+男主角 TRSPlug飾演：平凡的插頭，他整天夢想要成為人生勝利組。
+人生勝利組 Lightning飾演:IPHONE 7的標準插頭介面。
+師傅 LightningAdapter飾演：男主角導師，也就是將TRSPlug變成人生勝利組 (Lightning)的形狀。
+
+![adapterClass](http://123)
+
+1. 找到兩大主角，目標介面和被轉換類別。
+
+~~~java
+/**
+ * Target 目標介面，可以是具體或抽象類別。
+ */
+public interface Lightning {
+    String insert();
+}
+
+/**
+ * Adaptee 需要被轉換類別。
+ * TRS connector 是一種常用於連接音響設備，用以傳遞音頻訊號的連接器。
+ */
+public class TRSPlug {
+    public String insert() {
+        return "TRS 3.5mm 插頭";
+    }
+}
+~~~
+
+2. 實作目標介面的所有方法,傳入需要被轉換類別(TRSPlug)，呼叫被轉換類別的相對應實作方法。
+
+~~~java
+/**
+ * Adapter 類別，透過內部將Adaptee物件進行包裝。把原始介面轉換成目標介面。
+ */
+//要實踐目標介面
+public class LightningAdapter implements Lightning {
+    private TRSPlug TRSPlug;
+
+    public LightningAdapter(TRSPlug TRSPlug) {
+        this.TRSPlug = TRSPlug;
+    }
+    //實踐目標介面所需的方法
+    public String insert() {
+        return TRSPlug.insert()+" convert to  Lightning插頭.";
+    }
+}
+~~~
+
+3. 應用端可利用instanceof去識別出不同介面，所因應的操作環節。
+
+~~~java
+/**
+ * Created by Show on 2017/6/19.
+ */
+public class IPhone7 {
+    public void playMusic(Object plug) {
+        if (plug instanceof Lightning ) {
+            Lightning lightningSlot = (Lightning) plug;
+            System.out.println(lightningSlot.insert()+" 連接成功，播放音樂中。");
+        }else{
+            System.out.println("連接失敗，請使用 Lightning 接口的插頭.");
+        }
+    }
+}
+~~~
+
+4. 
