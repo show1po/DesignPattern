@@ -7,8 +7,9 @@
 
 谷阿莫是台灣網紅，擅長『以XX分鐘帶你看完OO電影』，並且將影片上傳至Youtube平台供人觀賞。
 
-- [[5分鐘看完2017兒子不是老婆生的電影《玩命關頭8 The Fate of the Furious》]]([5分鐘看完2017兒子不是老婆生的電影《玩命關頭8 The Fate of the Furious》] "https://www.youtube.com/watch?v=TpPFuP7TioA")
-- [5分鐘看完2017屍體害你的電影《驗屍官 The Autopsy of Jane Doe 》](5分鐘看完2017屍體害你的電影《驗屍官 The Autopsy of Jane Doe 》 "https://www.youtube.com/watch?v=xE7sJjfMYuY")
+- [5分鐘看完2017兒子不是老婆生的電影]("https://www.youtube.com/watch?v=TpPFuP7TioA")
+
+- [5分鐘看完2017屍體害你的電影]("https://www.youtube.com/watch?v=xE7sJjfMYuY")
 
 但是他的影片畫面來源，都是摘錄自盜版影片的畫面，進而引發了“二次創作”的相關爭議。
 
