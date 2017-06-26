@@ -7,17 +7,16 @@
 
 谷阿莫是台灣網紅，擅長『以XX分鐘帶你看完OO電影』，並且將影片上傳至Youtube平台供人觀賞。
 
-- [5分鐘看完2017兒子不是老婆生的電影《玩命關頭8 The Fate of the Furious》][film1]
-- [5分鐘看完2017屍體害你的電影《驗屍官 The Autopsy of Jane Doe 》][film2]
-[film1]:https://www.youtube.com/watch?v=TpPFuP7TioA
-[film2]:https://www.youtube.com/watch?v=xE7sJjfMYuY
-[film3]:https://www.youtube.com/watch?v=7icUXwJRaXQ
+- [[5分鐘看完2017兒子不是老婆生的電影《玩命關頭8 The Fate of the Furious》]]([5分鐘看完2017兒子不是老婆生的電影《玩命關頭8 The Fate of the Furious》] "https://www.youtube.com/watch?v=TpPFuP7TioA")
+- [5分鐘看完2017屍體害你的電影《驗屍官 The Autopsy of Jane Doe 》](5分鐘看完2017屍體害你的電影《驗屍官 The Autopsy of Jane Doe 》 "https://www.youtube.com/watch?v=xE7sJjfMYuY")
 
 但是他的影片畫面來源，都是摘錄自盜版影片的畫面，進而引發了“二次創作”的相關爭議。
 
-- [【谷阿莫】我被警方搜查之著作權合理使用原則在網路上的適用][film3]
+- [【谷阿莫】我被警方搜查之著作權合理使用原則在網路上的適用](【谷阿莫】我被警方搜查之著作權合理使用原則在網路上的適用 "https://www.youtube.com/watch?v=7icUXwJRaXQ")
 
--
+
+----------
+
 
 那谷阿莫與我們要談的觀察者模式有什麼關聯呢？沒有正相關，哈哈！
 此篇主角是Youtube的***“訂閱功能”***，觀眾透過訂閱頻道，每當頻道有更新影片了，便會主動發通知給觀眾，讓觀眾知道有新影片可以觀看，趕緊上線看影片拉ＲＲＲ!
