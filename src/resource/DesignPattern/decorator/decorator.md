@@ -211,3 +211,5 @@ public class Makeup extends FaceDecorator {
 	關穎,一名要參加派對的女孩,戴上耳環,抹上眼影,印象總分:70.0
 	關穎,一名要參加派對的女孩,戴上耳環,抹上眼影,塗上紅脣,印象總分:80.0
 	關穎,一名要參加派對的女孩,戴上耳環,抹上眼影,塗上紅脣,畫了淡妝,印象總分:90.0
+
+![terri](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/decorator/decorator_terri.png)
