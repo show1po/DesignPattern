@@ -2,11 +2,12 @@
 
 ## 前言 ##
 
-標題是引用自黃立行2007年發行的《打分數》，歌曲直接了當點出，人與人之間相處都是互相評分，而評分標準則因人而異，大多都是受裝扮、個性、外貌所影響。由於評分變數太多不利於解釋，所以我們就取單一變化:裝扮來進行說明。
+標題是引用自黃立行2007年發行的《[打分數](打分數 "https://www.youtube.com/watch?v=kX-zOqQZaaI")》，歌曲直接了當點出，人與人之間相處都是互相評分，而評分標準則因人而異，大多都是受裝扮、個性、外貌所影響。由於評分變數太多不利於解釋，所以我們就取單一變化:裝扮來進行說明。
 
 ## 情境案例 ##
 
 Terri終於18歲了，迫不及待地去參加同學們的成年趴，為了吸引趴體上大家的目光，需要精心的打扮，從臉部的裝飾品開始，從眼影、口紅、耳環、化妝品。
+![Terri](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/decorator/terri.jpg)
 
 ### 裝飾者模式 ###
 
@@ -18,7 +19,10 @@ Terri終於18歲了，迫不及待地去參加同學們的成年趴，為了吸�
 * 不論經過幾次包裝，都仍是被裝飾者女孩自己，本身元件。
 * 裝飾者會導致出現多小類別，令程式過於複雜。
 
-### 一 介面 ###
+![class](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/decorator/decorator.png)
+
+### 一 介面(抽象類別) ###
+
 ~~~
 
 /**
