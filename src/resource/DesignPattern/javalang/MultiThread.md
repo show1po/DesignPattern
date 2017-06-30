@@ -15,6 +15,7 @@
 
 當程序因長期無法完成工作，取得所需的全部資源，形成自身無限期停滯。
 eq.常發生於unfair、preemptive環境底下
+
 **Solution**:將長期停滯未完工的程序提升其優先權，使其提升取得所需資源機會。
 
 ----------
@@ -135,6 +136,154 @@ syncedMap = Collections.synchronizedMap(myMap);
 ~~~
 
 則可以把原本的non-thread-safe的容器包成thread safe的容器。
+
+## Asynchronous ##
+
+### Sync ###
+
+同步執行：多個函式交由同一執行緒執行，執行順序則是逐一完成。
+
+### Async ###
+非同步執行：將多個函式交由不同執行緒執行，無須逐一等待回傳值。
+
+Java語言中
+
+* Future
+* CompletableFuture
+
+## Future ##
+
+非同步呼叫的回傳結果，此結果將在未來某一個時間點取得。
+是介面。
+如：將衣服交給洗衣機清洗，則我們會預期40分鐘後洗完衣服的結果(Future)。
+
+~~~java
+
+public class LaundaryService {
+    private ExecutorService executorService = /*...*/;
+
+    public Future<Clothes> serviceAsync(Clothes dirtyClothes) {
+        return executorService.submit(()-> service(dirtyClothes));
+    }
+
+    public Clothes service(Clothes dirtyClothes) {
+        return dirtyClothes.wash();
+    }
+}
+
+Future<Clothes> future = laundryService.serviceAsync(myClothes);
+
+~~~
+
+而取得預期結果 Future後，在等待清洗的40分鐘內，我們可以選擇block等待清洗完畢，或者去做其他事情。
+
+~~~
+// block until result is available
+Clothes clothes = future.get();
+~~~
+
+## CompletableFuture ##
+
+java8支援lambdas函式庫，具備Functional Language裡Monad的精神，函式可以接二連三的串接並接續進行的概念。
+
+CompletableFuture是一個Future的實作，分為Completable四個特性來討論
+
+1. Completable
+2. Listenable
+3. Composible
+4. Combinable
+
+
+----------
+### 1. Completable ###
+
+對於caller看到就是future，對於callee就是看到promise。
+
+而CompletableFuture就同時扮演了Future跟Promise兩種角色。
+
+所以CompletableFuture會被下面這樣使用
+在非同步呼叫時，會先產生一個CompletableFuture，並且回傳給caller
+這個CompletableFuture會連同async task一起傳到worker thread中。
+當執行完這個async task，callee會呼叫CompletableFuture的complete()
+此時caller可以透過CompletableFuture的get()取得結果的值。
+
+**在Google的Guava library中也可以看到completable的蹤影，那就是SettableFuture。**
+
+----------
+
+### 2. Listenable ###
+
+Future只提供了一個pulling result的方法，更多時候我們想要的是好了叫我這種語意。因此Listenable的特性，就是我們可以註冊一個callback，讓我可以listen執行完成的event。
+在CompletableFuture主要是透過whenComplete()跟handle()這兩個method。
+
+**同樣在Guava library中也可以看到listenable的蹤影，那就是ListenableFuture。**
+
+----------
+
+### 3. Composible ###
+
+有了Listenable的特性之後，我們就可以做到當完成時，在做下一件事情。如果接下來又是一個非同步的工作，那就可能會串成非常多層，我們稱之為callback hell。
+
+~~~java
+public static void main(String[] args) throws InterruptedException {
+    CompletableFuture<Void> future = 
+    CompletableFuture
+    .runAsync(() -> sleep(1000))
+    .whenComplete((result, throwable) -> {
+        if (throwable != null) {
+            return;
+        }
+
+        CompletableFuture
+        .runAsync(() -> sleep(1000))
+        .whenComplete((result2, throwable2) -> {
+            if (throwable2 != null) {
+                return;
+            }
+
+            CompletableFuture
+            .runAsync(() -> sleep(1000))
+            .whenComplete((result3, throwable3) -> {
+                if (throwable2 != null) {
+                    return;
+                }
+
+                System.out.println("Done");
+            });
+        });
+    });
+~~~
+
+這個程式碼這樣三層可能已經受不了了，如果更多層應該會有噁心的感覺。這還不打緊，如果再加上錯誤處理，那可能更是暈頭轉向。
+對於這種一連串的invocation，如果可以把這些async function組起來，變成一個單一future，可能會舒服許多。先來看最後的結果，我們再來討論細節。
+
+~~~java
+
+CompletableFuture
+.runAsync(() -> sleep(1000))
+.thenRunAsync(() -> sleep(1000))
+.thenRunAsync(() -> sleep(1000))
+.whenComplete((r, ex) -> System.out.println("done"));
+
+~~~
+他們都有一個特性，就是把原本某個CompletableFuture的type parameter，經過一個transformer後，轉成另外一個Type的CompletableFuture，這就是Monad中的map。而最後一個因為他的回傳值本來就是CompletableFuture，這種轉換我們稱之為flatmap。其實同樣的概念在Optional API跟Stream API都找得到
+
+**同樣在guava library中，我們可以看到composible的蹤影，他是放在Futures下面的transformXXX()相關的methods。**
+
+----------
+
+### 4. Combinable ###
+
+async的流程有些時候不會是單一條路的，有時候更像是DAG(Directed Acyclic Graph)。例如做一個爬蟲程式(Crawler)，我們排一個文章的時候，可能會抓到很多個外部鏈結，這時候就會繼續展開更多非同步的task。等到到了某個停止條件，我們就要等所有爬蟲的task完成，最終等於執行完這個大的async task。
+這時候我們會希望把多個future完成時當作一個future的complete，這就是combinable的概念。跟composible的概念不同的是，composible是一個串一個，比較像是串連的感覺；相對的combinable，就比較像是並聯。
+CompletableFuture還有提供兩個static methods來做combine多個futures。
+
+Method	Description
+allOf(...)	回傳一個future，其中所有的future都完成此future才算完成。
+anyOf(...)	回傳一個future，其中任何一個future完成則此future就算完成。
+
+----------
+
 
 ### 感謝 ###
 

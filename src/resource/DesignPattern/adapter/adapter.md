@@ -1,4 +1,4 @@
-# 轉接器模式(Adapter):愛瘋愛瘋，夜裡CookCook #
+# Adapter 轉接器模式:愛瘋愛瘋，夜裡CookCook #
 
 ## 前言 ##
 
