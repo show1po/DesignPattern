@@ -7,6 +7,7 @@
 ## 情境案例 ##
 
 Terri終於18歲了，迫不及待地去參加同學們的成年趴，為了吸引趴體上大家的目光，需要精心的打扮，從臉部的裝飾品開始，從眼影、口紅、耳環、化妝品。
+
 ![Terri](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/decorator/terri.jpg)
 
 ### 裝飾者模式 ###
@@ -23,7 +24,7 @@ Terri終於18歲了，迫不及待地去參加同學們的成年趴，為了吸�
 
 ### 一 介面(抽象類別) ###
 
-~~~
+~~~java
 
 /**
  * <<被裝飾者介面>>
@@ -81,7 +82,8 @@ public abstract class FaceDecorator extends PartyGirl {
 
 1. 被裝飾者的子類別
 
-~~~
+~~~java
+
 //關穎想去參加趴體的女孩兒
 public class Terri extends PartyGirl {
     public Terri(String name, String description, double impressionScore) {
@@ -92,7 +94,8 @@ public class Terri extends PartyGirl {
 
 2. 裝飾者的子類別
 
-~~~
+~~~java
+
 public class Earrings extends FaceDecorator {
     private final PartyGirl partyGirl;
 
