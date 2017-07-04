@@ -9,7 +9,7 @@
 
 ![Tim Cook](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/adapter/timcook.jpg)
 
-對我來說最劃時代的改變，就是在iphone7中採用無線耳機，並且取消了存在幾十年的傳統 3.5 mm 標準耳機接口。
+對我來說最劃時代的改變，就是在 iphone 7 中採用無線耳機，並且取消了存在幾十年的傳統 3.5 mm 標準耳機接口。
 那你一定忍不住想問：那我的傳統 3.5 mm 耳機，只能丟垃圾桶了嗎?
 ### 不! ###
 你的心聲，還沒說出口，蘋果就都聽到了~
@@ -20,13 +20,13 @@
 [Lightning 對 3.5 公釐耳機插孔轉接器
 ](https://www.apple.com/tw/shop/product/MMX62FE/A/lightning-%E5%B0%8D-35-%E5%85%AC%E9%87%90%E8%80%B3%E6%A9%9F%E6%8F%92%E5%AD%94%E8%BD%89%E6%8E%A5%E5%99%A8)
 
-再搭配你的 iphone7
+再搭配你的 iphone 7
 
 ### 就可以 ###
 
 ![AdapterIphone](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/adapter/Lightning.jpg)
 
--
+----
 
 PS.至於無線耳機呢？
 

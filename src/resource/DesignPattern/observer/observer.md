@@ -38,12 +38,12 @@ Channel ：Youtuber 會將影片上傳，至開創的頻道之中供觀眾點閱
 而被觀察者通常會提供三種基本行為：
 
 * 供觀察者註冊 registerObserver ( Observer observer )
-* 供觀察者移除 removeObserver ( Observer observer )
-* 通知觀察者 notifyObserver ( Data data )
+* 供觀察者移除 removeObserver   ( Observer observer )
+* 通知觀察者   notifyObserver   ( Data data )
 
 ~~~java
 /**
- * 頻道介面：被觀察者(Observable)或稱主題(Subject)，具備三種基本行為。
+ * 頻道介面：被觀察者 (Observable) 或稱主題 (Subject) ，具備三種基本行為。
  */
 public interface Channel {
     String getChannelName();
@@ -59,7 +59,7 @@ public interface Channel {
 }
 ~~~
 
-Observer 觀察者：就是在Youtube平台上面註冊的觀眾，可以訂閱喜歡的Youtuber頻道。
+Observer 觀察者：就是在 Youtube 平台上面註冊的觀眾，可以訂閱喜歡的 Youtuber 頻道。
 
 ~~~java
 /**
