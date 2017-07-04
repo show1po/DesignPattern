@@ -2,25 +2,25 @@
 
 ## 前言 ##
 
-還記得在2007年時，賈伯斯宣布 ***「今天！蘋果重新發明了電話」*** 。
-至此以後展開了『大愛瘋時代』，對許多人來說iphone就代表著創新、新潮的系列作品，風靡於各大果粉之間，也有人為[買iPhone 6s不惜一切到醫院賣腎](http://www.appledaily.com.tw/realtimenews/article/new/20150915/691838/)。
+還記得在 2007 年時，賈伯斯宣布 ***「今天！蘋果重新發明了電話」*** 。
+至此以後展開了『大愛瘋時代』，對許多人來說 iphone 就代表著創新、新潮的系列作品，風靡於各大果粉之間，也有人為[買 iPhone 6s 不惜一切到醫院賣腎](http://www.appledaily.com.tw/realtimenews/article/new/20150915/691838/)。
 
-事實上創新就是等同改變，在講求推陳出新的iphone系列中，不乏許多頂尖的創新，屏除從jobs換成Tim Cook這個執行長改變以外。
+事實上創新就是等同改變，在講求推陳出新的iphone系列中，不乏許多頂尖的創新，屏除從 jobs 換成 Tim Cook 這個執行長改變以外。
 
 ![Tim Cook](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/adapter/timcook.jpg)
 
-對我來說最劃時代的改變，就是在iphone7中採用無線耳機，並且取消了存在幾十年的傳統3.5mm標準耳機接口。
-那你一定忍不住想問：那我的傳統3.55mm耳機，只能丟垃圾桶了嗎?
+對我來說最劃時代的改變，就是在iphone7中採用無線耳機，並且取消了存在幾十年的傳統 3.5 mm 標準耳機接口。
+那你一定忍不住想問：那我的傳統 3.5 mm 耳機，只能丟垃圾桶了嗎?
 ### 不! ###
 你的心聲，還沒說出口，蘋果就都聽到了~
 
 ![mind](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/adapter/mind.jpg)
 
-你可以花NT$350到蘋果商店，購買
+你可以花 NT$ 350 到蘋果商店，購買
 [Lightning 對 3.5 公釐耳機插孔轉接器
 ](https://www.apple.com/tw/shop/product/MMX62FE/A/lightning-%E5%B0%8D-35-%E5%85%AC%E9%87%90%E8%80%B3%E6%A9%9F%E6%8F%92%E5%AD%94%E8%BD%89%E6%8E%A5%E5%99%A8)
 
-再搭配你的iphone7
+再搭配你的 iphone7
 
 ### 就可以 ###
 
@@ -30,7 +30,7 @@
 
 PS.至於無線耳機呢？
 
-它並不是標準配備，需要額外加購，加購價:NT$5,490
+它並不是標準配備，需要額外加購，加購價: NT$ 5,490
 
 [AirPods](https://www.apple.com/tw/shop/product/MMEF2TA/A/airpods?fnode=36a4f29340c054879ca1f90063ad61dfe7976a7103a6bd1f51b225bddf79c8d2d2f5c5c6128fc7b17d5aad2012e85b56f68284f5295b1642fab80004a83457cea7d18c2a650ab29cd3345fd542e6e15270151d32edc59b7b6218a604f64a366b43224ea3b3c63c44e6ffe5422a5cb72b942672f41900e7bfcfabf94006d9518e)
 
@@ -55,9 +55,9 @@ PS.至於無線耳機呢？
 
 #### 釐清角色： ####
 
-* 男主角 TRSPlug飾演：平凡的插頭，他整天夢想要成為人生勝利組。
-* 人生勝利組 Lightning飾演:IPHONE 7的標準插頭介面。
-* 師傅 LightningAdapter飾演：男主角導師，也就是將TRSPlug變成人生勝利組 (Lightning)的形狀。
+* 男主角     TRSPlug          飾演：平凡的插頭，他整天夢想要成為人生勝利組。
+* 人生勝利組 Lightning        飾演： IPHONE 7 的標準插頭介面。
+* 師傅       LightningAdapter 飾演：男主角導師，也就是將TRSPlug變成人生勝利組 ( Lightning ) 的形狀。
 
 ![adapterClass](https://raw.githubusercontent.com/show1po/DesignPattern/master/src/resource/DesignPattern/adapter/adapter_class.png)
 
@@ -82,7 +82,7 @@ public class TRSPlug {
 }
 ~~~
 
-2. 實作目標介面的所有方法,傳入需要被轉換類別(TRSPlug)，呼叫被轉換類別的相對應實作方法。
+2. 實作目標介面的所有方法,傳入需要被轉換類別 ( TRSPlug ) ，呼叫被轉換類別的相對應實作方法。
 
 ~~~java
 /**
@@ -102,7 +102,7 @@ public class LightningAdapter implements Lightning {
 }
 ~~~
 
-3. 應用端可利用instanceof去識別出不同介面，所因應的操作環節。
+3. 應用端可利用 instanceof 去識別出不同介面，所因應的操作環節。
 
 ~~~java
 /**
