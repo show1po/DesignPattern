@@ -8,3 +8,6 @@ https://github.com/mingjunli/JavaDesignPatterns
 https://github.com/mirsfang/ExamplesOfDesignPatterns/tree/master/src/action
 https://github.com/youlookwhat/DesignPattern
 http://design-patterns.readthedocs.io/zh_CN/latest/behavioral_patterns/behavioral.html
+
+
+建議 hexo 搭配 github 的 page 使用
