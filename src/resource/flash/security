@@ -1,0 +1,18 @@
+
+
+一、Flash網頁無法正常使用，解決 Security Sandbox Violation 問題，載入本機檔案:
+
+1.透過設定檔
+"C:\Users\UserName\AppData\Roaming\Macromedia\Flash Player\#Security\FlashPlayerTrust\air.1.0.trust.cfg"
+<File content>
+app:
+C:\Users\Show\Downloads\2000-basic-words
+</File content>
+
+2.安裝 debugger :>網頁版本設定:全域設定>全域安全性設定面板>信任以下位置中檔案。
+
+3.Flash畫面>右鍵>進階>受信任的位置設定>新增位置
+
+4.透過 Apache server 加載網頁。
+
+二、Flash debugger :FireFox firebugs plugin add flash debugger.
