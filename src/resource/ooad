@@ -1,0 +1,4 @@
+dependency inversion顛覆依賴守則：
+低階元件（CheesePizza）高階元件（PizzaStore）必須依賴於抽象（pizza）。工廠方法實現。
+open-closed 開放關閉原則：
+類別應該開法以便擴充;應該關閉，禁止修改。裝飾者模式
